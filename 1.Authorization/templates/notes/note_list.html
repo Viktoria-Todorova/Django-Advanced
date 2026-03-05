@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes List</title>
+</head>
+<body>
+    <h1>My Notes</h1>
+
+    {% if notes %}
+        <ul>
+            {% for note in notes %}
+                <li>
+                    <strong>{{ note.title }}</strong><br>
+                    {{ note.body }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No notes found.</p>
+    {% endif %}
+
+    <p>
+{#        <a href="{% url 'common:note_create' %}">Create New Note</a>#}
+    </p>
+</body>
+</html>
