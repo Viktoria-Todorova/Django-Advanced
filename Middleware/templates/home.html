@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #fce4ec; /* Light pink background */
+        }
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(255, 182, 193, 0.4);
+        }
+        .btn-pink {
+            background-color: #e91e63;
+            color: white;
+            border-radius: 20px;
+        }
+        .btn-pink:hover {
+            background-color: #c2185b;
+            color: white;
+        }
+        .btn-outline-pink {
+            border: 2px solid #e91e63;
+            color: #e91e63;
+            border-radius: 20px;
+        }
+        .btn-outline-pink:hover {
+            background-color: #e91e63;
+            color: white;
+        }
+        .text-pink {
+            color: #d81b60;
+        }
+        .border-pink {
+            border: 1px solid #f8bbd0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+                <div class="card p-5">
+                    <h1 class="text-pink mb-4">Welcome!</h1>
+                    <p class="lead mb-4">{{ greeting_messages }}</p>
+                    <div class="alert alert-light border-pink">
+                        <strong>Current Language:</strong> {{ current_language|upper }}
+                    </div>
+                    <div class="mt-4 d-flex flex-wrap justify-content-center gap-2">
+                        <a href="{% url 'choose_language' %}" class="btn btn-pink px-4 py-2">Change Language</a>
+                        <a href="{% url 'session_expiry' %}" class="btn btn-outline-pink px-4 py-2">Session Settings</a>
+                        <a href="{% url 'read_theme_cookie' %}" class="btn btn-outline-pink px-4 py-2">Theme Settings</a>
+                        <a href="{% url 'read_signed_cookie' %}" class="btn btn-outline-pink px-4 py-2">Signed Cookie</a>
+                        <a href="{% url 'flush_session' %}" class="btn btn-pink px-4 py-2">Flush Session</a>
+                        <a href="{% url 'clear_session' %}" class="btn btn-outline-pink px-4 py-2">Clear session</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
